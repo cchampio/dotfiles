@@ -38,6 +38,11 @@ set smarttab        " Be smart when using tabs ;)
 set shiftwidth=4    " 1 tab == 4 spaces
 set tabstop=4
 set number  "show line numbers
+set nowrap  "do not auto wrap long lines automatically
+set fo-=t   "do not auto wrap text when typing
+
+
+
 
 " Linebreak on 500 characters
 "set lbr
