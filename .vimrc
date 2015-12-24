@@ -39,14 +39,13 @@ set nowrap          " do not auto wrap long lines automatically
 set fo-=t           " do not auto wrap text when typing
 
 "******************************
-" The below lines are things I ran across that I want to consider
-" later whether I will use them or not
+" The lines below are things I ran across that I want to consider
+" later. 
 "******************************
 
 " Linebreak on 500 characters
 "set lbr
 "set tw=500
-
 "set ai "Auto indent
 "set si "Smart indent
 "set wrap "Wrap lines
