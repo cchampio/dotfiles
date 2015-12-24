@@ -27,7 +27,7 @@ set incsearch   " Makes search act like search in modern browsers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -36,13 +36,17 @@ set noswapfile
 set expandtab       " Use spaces instead of tabs
 set smarttab        " Be smart when using tabs ;)
 set shiftwidth=4    " 1 tab == 4 spaces
-set tabstop=4
-set number  "show line numbers
-set nowrap  "do not auto wrap long lines automatically
-set fo-=t   "do not auto wrap text when typing
+set tabstop=4       " how many columns is a tab. 
+set softtabstop=4   " how many columns is tab when you type Tab in insert mode
+set shiftround      " what does this do???? I don't know but I am taking it anyway
+set number          " show line numbers
+set nowrap          " do not auto wrap long lines automatically
+set fo-=t           " do not auto wrap text when typing
 
-
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" The below lines are things I ran across that I want to consider
+" later whether I will use them or not
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Linebreak on 500 characters
 "set lbr
