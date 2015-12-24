@@ -1,5 +1,3 @@
-" I may over document this file right now because I am still learning vim --CWC
-
 " Avoid needing to close and reopen the vimrc file when making changes 
 " to it. Changes will be effective in the current vimrc file as soon as
 " that file is saved.
@@ -16,20 +14,16 @@ autocmd! bufwritepost .vimrc source %
 syntax on
 imap jj <Esc>
 
-" Ignore case when searching
-set ignorecase
-
-" When searching try to be smart about cases 
-set smartcase
-
-" Highlight search results
-set hlsearch
-
-" Makes search act like search in modern browsers
-set incsearch
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Searching 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set ignorecase  " Ignore case when searching
+set smartcase   " When searching try to be smart about cases 
+set hlsearch    " Highlight search results
+set incsearch   " Makes search act like search in modern browsers
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
+" Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -37,17 +31,13 @@ set nowb
 set noswapfile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
+" Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
+set expandtab       " Use spaces instead of tabs
+set smarttab        " Be smart when using tabs ;)
+set shiftwidth=4    " 1 tab == 4 spaces
 set tabstop=4
+set number  "show line numbers
 
 " Linebreak on 500 characters
 "set lbr
