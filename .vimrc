@@ -39,6 +39,14 @@ set nowrap          " do not auto wrap long lines automatically
 set fo-=t           " do not auto wrap text when typing
 
 "******************************
+" Plugins
+"******************************
+" pathogen is a plugin manager
+" mkdir -p ~/.vim/autoload ~/.vim/bundle 
+" curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+execute pathogen#infect() 
+
+"******************************
 " The lines below are things I ran across that I want to consider
 " later. 
 "******************************
