@@ -41,7 +41,8 @@ set fo-=t           " do not auto wrap text when typing
 "******************************
 " Plugins
 "******************************
-" pathogen is a plugin manager
+" pathogen is a plugin manager 
+" https://github.com/tpope/vim-pathogen
 " mkdir -p ~/.vim/autoload ~/.vim/bundle 
 " curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 execute pathogen#infect() 
