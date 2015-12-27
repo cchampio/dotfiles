@@ -1,6 +1,7 @@
 "******************************
 " Auto commands 
 "******************************
+colorscheme morning
 autocmd! bufwritepost .vimrc source %   " automatically source the vimrc when it is saved. 
 syntax on
 
