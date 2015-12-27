@@ -5,6 +5,7 @@ colorscheme morning
 autocmd! bufwritepost .vimrc source %   " automatically source the vimrc when it is saved. 
 syntax on
 
+
 "******************************
 " key mappings
 "******************************
@@ -35,7 +36,8 @@ set shiftwidth=4    " 1 tab == 4 spaces
 set tabstop=4       " how many columns is a tab. 
 set softtabstop=4   " how many columns is tab when you type Tab in insert mode
 set shiftround      " what does this do???? I don't know but I am taking it anyway
-set number          " show line numbers
+"set number          " show line numbers 
+set relativenumber  " show relative line numbers
 set nowrap          " do not auto wrap long lines automatically
 set fo-=t           " do not auto wrap text when typing
 
@@ -46,7 +48,10 @@ set fo-=t           " do not auto wrap text when typing
 " https://github.com/tpope/vim-pathogen
 " mkdir -p ~/.vim/autoload ~/.vim/bundle 
 " curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+filetype off
 execute pathogen#infect() 
+execute pathogen#helptags() 
+filetype plugin indent on
 
 "******************************
 " The lines below are things I ran across that I want to consider
