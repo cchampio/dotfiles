@@ -1,26 +1,30 @@
 "******************************
-" Auto commands 
+" Auto commands
 "******************************
-colorscheme morning
-autocmd! bufwritepost .vimrc source %   " automatically source the vimrc when it is saved. 
+" automatically source the vimrc when it is saved.
+autocmd! bufwritepost .vimrc source %
 syntax on
-
 
 "******************************
 " key mappings
 "******************************
-imap jj <Esc> 
+imap jj <Esc>
 
 "******************************
 " Searching
 "******************************
-set ignorecase  " Ignore case when searching
-set smartcase   " When searching try to be smart about cases 
-set hlsearch    " Highlight search results
-set incsearch   " Makes search act like search in modern browsers
+
+" Ignore case when searching
+set ignorecase
+" When searching try to be smart about cases
+set smartcase
+" Highlight search results
+set hlsearch
+" Makes search act like search in modern browsers
+set incsearch
 
 "******************************
-" Turn off swap files, backup files, etc. 
+" Turn off swap files, backup files, etc.
 " They just get in the way of apps like git anyway...
 "******************************
 set nobackup
@@ -30,32 +34,42 @@ set noswapfile
 "******************************
 " Editor Options
 "******************************
-set expandtab       " Use spaces instead of tabs
-set smarttab        " Be smart when using tabs ;)
-set shiftwidth=4    " 1 tab == 4 spaces
-set tabstop=4       " how many columns is a tab. 
-set softtabstop=4   " how many columns is tab when you type Tab in insert mode
-set shiftround      " what does this do???? I don't know but I am taking it anyway
-"set number          " show line numbers 
-set relativenumber  " show relative line numbers
-set nowrap          " do not auto wrap long lines automatically
-set fo-=t           " do not auto wrap text when typing
+" Use spaces instead of tabs
+set expandtab
+" Be smart when using tabs ;)
+set smarttab
+" 1 tab == 4 spaces
+set shiftwidth=4
+" how many columns is a tab.
+set tabstop=4
+" how many columns is tab when you type Tab in insert mode
+set softtabstop=4
+" what does this do???? I don't know but I am taking it anyway
+set shiftround
+" show line numbers
+"set number
+" show relative line numbers
+set relativenumber
+" do not auto wrap long lines automatically
+set nowrap
+" do not auto wrap text when typing
+set fo-=t
 
 "******************************
 " Plugins
 "******************************
-" pathogen is a plugin manager 
+" pathogen is a plugin manager
 " https://github.com/tpope/vim-pathogen
-" mkdir -p ~/.vim/autoload ~/.vim/bundle 
+" mkdir -p ~/.vim/autoload ~/.vim/bundle
 " curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-filetype off
-execute pathogen#infect() 
-execute pathogen#helptags() 
-filetype plugin indent on
-
+"filetype off
+"execute pathogen#infect()
+"execute pathogen#helptags()
+"filetype plugin indent on
+"
 "******************************
 " The lines below are things I ran across that I want to consider
-" later. 
+" later.
 "******************************
 
 " Linebreak on 500 characters
