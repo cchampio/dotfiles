@@ -54,6 +54,10 @@ set relativenumber
 set nowrap
 " do not auto wrap text when typing
 set fo-=t
+" auto-indent code. Turns on file-type detection so that vim
+" will figure out what the file is as  it is loaded. 
+" Enables automatic indenting.
+filetype indent on
 
 "******************************
 " Plugins
