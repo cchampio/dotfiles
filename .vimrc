@@ -50,7 +50,7 @@ set smartcase
 set nowrap " do not automatically wrap on load. wrap|nowrap.
 set lbr
 set tw=79
-set fo-=t  " do not auto wrap text WHEN TYPING (use gqq).
+""set fo-=t  " do not auto wrap text WHEN TYPING (use gqq).
 
 ""set ai
 ""set si
@@ -72,5 +72,9 @@ endif
 " ==================================================
 " Python setup
 " ==================================================
+" Consider having a separate .vimrc_py and sourcing it from here. In this way I
+" can have a modular vimrc (vimrc_py, vimrc_cpp, vimrc_golang, etc).
+" For now I will put it all in here.
+"
 "" todo....
 
