@@ -60,7 +60,11 @@ set fo-=t  " do not auto wrap text WHEN TYPING (use gqq).
 "" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 map <Leader>x :%s/\s\+$//<CR>
 
-colorscheme torte
+if has('gui_running')
+    colorscheme peachpuff
+else
+    colorscheme torte
+endif
 
 " ==================================================
 " Python setup
