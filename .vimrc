@@ -8,6 +8,8 @@ filetype off
 filetype plugin indent on
 syntax on
 
+set clipboard=unnamed
+
 " ==================================================
 " Key mappings
 " ==================================================
