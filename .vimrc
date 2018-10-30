@@ -1,84 +1,68 @@
-"******************************
-" Auto commands
-"******************************
-" automatically source the vimrc when it is saved.
+set encoding=utf-8
 autocmd! bufwritepost .vimrc source %
+" https://github.com/tpope/vim-pathogen
+" I've started using "vim-plug" plugin manager instead
+execute pathogen#infect()
+
+filetype off
+filetype plugin indent on
 syntax on
 
-"******************************
-" key mappings
-"******************************
+" ==================================================
+" Key mappings
+" ==================================================
+let mapleader = ","
 imap jj <Esc>
+map <c-n> gt
+map <c-m> gT
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+noremap <Leader>h :nohl<CR>
 
-"******************************
-" Searching
-"******************************
+" ==================================================
+" General options
+" ==================================================
+set history=700
+set undolevels=700
 
-" Ignore case when searching
-set ignorecase
-" When searching try to be smart about cases
-set smartcase
-" Highlight search results
-set hlsearch
-" Makes search act like search in modern browsers
-set incsearch
-
-"******************************
-" Turn off swap files, backup files, etc.
-" They just get in the way of apps like git anyway...
-"******************************
 set nobackup
 set nowritebackup
 set noswapfile
 
-"******************************
-" Editor Options
-"******************************
-" Use spaces instead of tabs
-set expandtab
-" Be smart when using tabs ;)
-set smarttab
-" 1 tab == 4 spaces
-set shiftwidth=4
-" how many columns is a tab.
 set tabstop=4
-" how many columns is tab when you type Tab in insert mode
 set softtabstop=4
-" what does this do???? I don't know but I am taking it anyway
+set shiftwidth=4
 set shiftround
-" show line numbers
-"set number
-" show relative line numbers
+set expandtab
+set smarttab
 set relativenumber
-" do not auto wrap long lines automatically
-set nowrap
-" do not auto wrap text when typing
-set fo-=t
-" auto-indent code. Turns on file-type detection so that vim
-" will figure out what the file is as  it is loaded. 
-" Enables automatic indenting.
-filetype indent on
 
-"******************************
-" Plugins
-"******************************
-" pathogen is a plugin manager
-" https://github.com/tpope/vim-pathogen
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-"filetype off
-"execute pathogen#infect()
-"execute pathogen#helptags()
-"filetype plugin indent on
-"
-"******************************
-" The lines below are things I ran across that I want to consider
-" later.
-"******************************
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
-" Linebreak on 500 characters
-"set lbr
-"set tw=500
-"set ai "Auto indent
-"set si "Smart indent
-"set wrap "Wrap lines
+set nowrap " do not automatically wrap on load. wrap|nowrap.
+set lbr
+set tw=79
+set fo-=t  " do not auto wrap text WHEN TYPING (use gqq).
+
+""set ai
+""set si
+
+" Highlight undesired trailing whitespace so we can
+" remove it. MUST be inserted BEFORE the colorscheme command.
+" https://stackoverflow.com/questions/11087041/gvim-to-custom-highlight-group-in-vimrc-not-working
+"" highlight ExtraWhitespace ctermbg=red guibg=red
+"" au InsertLeave * match ExtraWhitespace /\s\+$/
+"" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+map <Leader>x :%s/\s\+$//<CR>
+
+colorscheme torte
+
+" ==================================================
+" Python setup
+" ==================================================
+
