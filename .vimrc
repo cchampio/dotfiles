@@ -1,7 +1,7 @@
 set encoding=utf-8
 autocmd! bufwritepost .vimrc source %
 " https://github.com/tpope/vim-pathogen
-" I've started using "vim-plug" plugin manager instead
+" someone said: I've started using "vim-plug" plugin manager instead
 execute pathogen#infect()
 
 filetype off
@@ -13,12 +13,15 @@ syntax on
 " ==================================================
 let mapleader = ","
 imap jj <Esc>
-map <c-n> gt
-map <c-m> gT
+" move around tabs
+map <c-n> <esc>:tabnext<CR>
+map <c-m> <esc>:tabprevious<CR>
+" move around splits
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+" take of search highlights
 noremap <Leader>h :nohl<CR>
 
 " ==================================================
@@ -58,7 +61,7 @@ set fo-=t  " do not auto wrap text WHEN TYPING (use gqq).
 "" highlight ExtraWhitespace ctermbg=red guibg=red
 "" au InsertLeave * match ExtraWhitespace /\s\+$/
 "" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-map <Leader>x :%s/\s\+$//<CR>
+map <Leader>x :%s/\s\+$//<CR> " remove trailing whitespace. 
 
 if has('gui_running')
     colorscheme peachpuff
@@ -69,4 +72,5 @@ endif
 " ==================================================
 " Python setup
 " ==================================================
+"" todo....
 
