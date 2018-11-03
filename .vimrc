@@ -8,6 +8,11 @@ filetype off
 filetype plugin indent on
 syntax on
 
+set clipboard=unnamed
+
+" ==================================================
+" Key mappings
+" ==================================================
 let mapleader = ","
 imap jj <Esc>
 " move around tabs
