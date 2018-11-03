@@ -3,6 +3,7 @@ autocmd! bufwritepost .vimrc source %
 " https://github.com/tpope/vim-pathogen
 " someone said: I've started using "vim-plug" plugin manager instead
 execute pathogen#infect()
+execute pathogen#helptags()
 
 filetype off
 filetype plugin indent on
@@ -10,9 +11,9 @@ syntax on
 
 set clipboard=unnamed
 
-" ==================================================
+" =============================================================================
 " Key mappings
-" ==================================================
+" =============================================================================
 let mapleader = ","
 imap jj <Esc>
 " move around tabs
@@ -100,4 +101,3 @@ set wildignore+=__init__.py
 ""set wildignore+=*.pyc
 ""set wildignore+=*_build/*
 ""set wildignore+=*/coverage/*
-
