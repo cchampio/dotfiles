@@ -8,9 +8,6 @@ filetype off
 filetype plugin indent on
 syntax on
 
-" ==================================================
-" Key mappings
-" ==================================================
 let mapleader = ","
 imap jj <Esc>
 " move around tabs
@@ -24,9 +21,9 @@ map <c-h> <c-w>h
 " take of search highlights
 noremap <Leader>h :nohl<CR>
 
-" ==================================================
+" =============================================================================
 " General options
-" ==================================================
+" =============================================================================
 set history=700
 set undolevels=700
 
@@ -50,7 +47,7 @@ set smartcase
 set nowrap " do not automatically wrap on load. wrap|nowrap.
 set lbr
 set tw=79
-""set fo-=t  " do not auto wrap text WHEN TYPING (use gqq).
+set fo-=t  " do not auto wrap text WHEN TYPING (use gqq).
 
 ""set ai
 ""set si
@@ -61,20 +58,41 @@ set tw=79
 "" highlight ExtraWhitespace ctermbg=red guibg=red
 "" au InsertLeave * match ExtraWhitespace /\s\+$/
 "" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-map <Leader>x :%s/\s\+$//<CR> " remove trailing whitespace. 
+map <Leader>x :%s/\s\+$//<CR> " remove trailing whitespace.
 
 if has('gui_running')
-    colorscheme peachpuff
+    ""colorscheme peachpuff
+    colorscheme molokai
+    ""colorscheme sorcerer
+    ""colorscheme bluechia
+    ""colorscheme darkblue2
+    ""colorscheme gotham
+    ""colorscheme grape
 else
-    colorscheme torte
+    ""colorscheme torte
+    ""colorscheme sorcerer
+    colorscheme molokai
 endif
 
-" ==================================================
-" Python setup
-" ==================================================
-" Consider having a separate .vimrc_py and sourcing it from here. In this way I
-" can have a modular vimrc (vimrc_py, vimrc_cpp, vimrc_golang, etc).
-" For now I will put it all in here.
-"
-"" todo....
+" =============================================================================
+" Plugin: powerline - a statusline plugin for vim (and other apps as well).
+" Home: https://github.com/powerline/powerline
+" Usage: https://powerline.readthedocs.io/en/latest/usage/other.html
+" Install: If using pathogen just clone the repo to the ~/.vim/bundle dir. and
+" then add the lines below to the .vimrc
+" =============================================================================
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim ""required
+set laststatus=2
+
+" =============================================================================
+" Plugin: ctrip.vim
+" Home: https://github.com/kien/ctrlp.vim.git
+" Usage: See homepage.
+" Install: If using pathogen just clone the repo to the ~/.vim/bundle dir.
+" =============================================================================
+let g:ctrlp_max_height = 30
+set wildignore+=__init__.py
+""set wildignore+=*.pyc
+""set wildignore+=*_build/*
+""set wildignore+=*/coverage/*
 
