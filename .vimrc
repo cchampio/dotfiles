@@ -1,11 +1,13 @@
 set encoding=utf-8
 autocmd! bufwritepost .vimrc source %
+
 " https://github.com/tpope/vim-pathogen
 " someone said: I've started using "vim-plug" plugin manager instead
+filetype off
+
 execute pathogen#infect()
 execute pathogen#helptags()
 
-filetype off
 filetype plugin indent on
 syntax on
 
@@ -58,12 +60,6 @@ set fo-=t  " do not auto wrap text WHEN TYPING (use gqq).
 ""set ai
 ""set si
 
-" Highlight undesired trailing whitespace so we can
-" remove it. MUST be inserted BEFORE the colorscheme command.
-" https://stackoverflow.com/questions/11087041/gvim-to-custom-highlight-group-in-vimrc-not-working
-"" highlight ExtraWhitespace ctermbg=red guibg=red
-"" au InsertLeave * match ExtraWhitespace /\s\+$/
-"" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 map <Leader>x :%s/\s\+$//<CR> " remove trailing whitespace.
 
 if has('gui_running')
@@ -83,9 +79,9 @@ endif
 " =============================================================================
 " Plugin: powerline - a statusline plugin for vim (and other apps as well).
 " Home: https://github.com/powerline/powerline
-" Usage: https://powerline.readthedocs.io/en/latest/usage/other.html
-" Install: If using pathogen just clone the repo to the ~/.vim/bundle dir. and
-" then add the lines below to the .vimrc
+" Docs: https://powerline.readthedocs.io/en/latest/usage/other.html
+" Install: If using pathogen just clone the repo to the '~/.vim/bundle' dir.
+" Then add the lines below to the .vimrc
 " =============================================================================
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim ""required
 set laststatus=2
@@ -93,11 +89,32 @@ set laststatus=2
 " =============================================================================
 " Plugin: ctrip.vim
 " Home: https://github.com/kien/ctrlp.vim.git
-" Usage: See homepage.
-" Install: If using pathogen just clone the repo to the ~/.vim/bundle dir.
+" Docs: :help ctrlp-commands and :help ctrlp-extensions
+" Install: If using pathogen just clone the repo to the '~/.vim/bundle' dir.
 " =============================================================================
 let g:ctrlp_max_height = 30
 set wildignore+=__init__.py
 ""set wildignore+=*.pyc
 ""set wildignore+=*_build/*
 ""set wildignore+=*/coverage/*
+
+" =============================================================================
+" Plugin: python-mode
+" Home: https://github.com/python-mode/python-mode
+" Docs: :help pymode
+" Install: If using pathogen just clone the repo to the '~/.vim/bundle' dir.
+" Then add the lines below to the .vimrc. In addition, check the homepage for
+" any frequent problems if things aren't working as expected.
+" =============================================================================
+filetype plugin on
+filetype indent on
+let g:pymode_python = 'python3'
+""let g:syntastic_auto_jump = 0
+" A few things to check to ensure python-mode is working properly:
+" - Look for the column divider at col 80
+" - K on a method shows documentation.
+" - Put trailing whitespace on the end of a line. It should highlight it.
+" - Run PymodeLint
+" - Now the real test. At the top of the file use an undeclared variable such
+"   as x = x + 10. On save it should catch the error.
+
