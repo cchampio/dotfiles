@@ -26,7 +26,7 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-" take of search highlights
+" take off search highlights
 noremap <Leader>h :nohl<CR>
 
 " =============================================================================
