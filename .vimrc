@@ -108,13 +108,13 @@ set wildignore+=__init__.py
 " =============================================================================
 filetype plugin on
 filetype indent on
-""let g:pymode_python = 'python3'
+""let g:pymode_python = 'python3' "defined above
 ""let g:syntastic_auto_jump = 0
 " A few things to check to ensure python-mode is working properly:
 " - Look for the column divider at col 80
 " - K on a method shows documentation.
 " - Put trailing white space on the end of a line. It should highlight it.
 " - Run PymodeLint
-" - Now the real test. At the top of the file use an undeclared variable such
-"   as x = x + 10. On save it should catch the error.
+" - At the top of the file use an undeclared variable such as x = x + 10. On
+"   save it should catch the error.
 
