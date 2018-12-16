@@ -16,6 +16,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'powerline/powerline'
 Plug 'scrooloose/nerdtree'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'flazz/vim-colorschemes'
 
 " :PlugClean   // Remove unused plugins
 " :PlugInstall // Install plugins
@@ -71,9 +72,9 @@ if has('gui_running')
     ""colorscheme gotham
     ""colorscheme grape
 else
-    colorscheme torte
+    ""colorscheme torte
     ""colorscheme sorcerer
-    ""colorscheme molokai
+    colorscheme molokai
 endif
 
 " =============================================================================
