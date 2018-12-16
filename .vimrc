@@ -7,6 +7,9 @@ filetype indent on
 let g:pymode_python = 'python3'
 
 " BEGIN vim-plug
+" First install vim-plug using: 
+"   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
 
 Plug 'kien/ctrlp.vim'
