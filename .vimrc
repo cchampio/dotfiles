@@ -64,11 +64,11 @@ set fo-=t  " do not auto wrap text WHEN TYPING (use gqq).
 map <Leader>x :%s/\s\+$//<CR> " remove trailing white space.
 
 if has('gui_running')
-    colorscheme peachpuff
+    ""colorscheme peachpuff
     ""colorscheme molokai
     ""colorscheme sorcerer
     ""colorscheme bluechia
-    ""colorscheme darkblue2
+    colorscheme darkblue2
     ""colorscheme gotham
     ""colorscheme grape
 else
@@ -112,6 +112,9 @@ set wildignore+=__init__.py
 " =============================================================================
 filetype plugin on
 filetype indent on
+""hi ColorColumn ctermbg=8
+""hi ColorColumn guibg=gray
+let g:pymode_options_colorcolumn = 0 " Turn off the red line for column 80
 ""let g:pymode_python = 'python3' "defined above
 ""let g:syntastic_auto_jump = 0
 " A few things to check to ensure python-mode is working properly:
